@@ -1,0 +1,9 @@
+telegram
+typing
+python-telegram-bot~=20.5
+requests
+pandas
+pillow
+aiogram
+datetime
+openpyxl

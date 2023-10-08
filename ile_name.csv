@@ -1,0 +1,550 @@
+,domain_id,domain_name,domain_url
+0,0000,Pusat,http://www.bps.go.id
+1,1100,Aceh,https://aceh.bps.go.id
+2,1101,Simeulue,https://simeuluekab.bps.go.id
+3,1102,Aceh Singkil,https://acehsingkilkab.bps.go.id
+4,1103,Aceh Selatan,https://acehselatankab.bps.go.id
+5,1104,Aceh Tenggara,https://acehtenggarakab.bps.go.id
+6,1105,Aceh Timur,https://acehtimurkab.bps.go.id
+7,1106,Aceh Tengah,https://acehtengahkab.bps.go.id
+8,1107,Aceh Barat,https://acehbaratkab.bps.go.id
+9,1108,Aceh Besar,https://acehbesarkab.bps.go.id
+10,1109,Pidie,https://pidiekab.bps.go.id
+11,1110,Bireuen,https://bireuenkab.bps.go.id
+12,1111,Aceh Utara,https://acehutarakab.bps.go.id
+13,1112,Aceh Barat Daya,https://acehbaratdayakab.bps.go.id
+14,1113,Gayo Lues,https://gayolueskab.bps.go.id
+15,1114,Aceh Tamiang,https://acehtamiangkab.bps.go.id
+16,1115,Nagan Raya,https://naganrayakab.bps.go.id
+17,1116,Aceh Jaya,https://acehjayakab.bps.go.id
+18,1117,Bener Meriah,https://benermeriahkab.bps.go.id
+19,1118,Pidie Jaya,https://pidiejayakab.bps.go.id
+20,1171,Banda Aceh,https://bandaacehkota.bps.go.id
+21,1172,Sabang,https://sabangkota.bps.go.id
+22,1173,Langsa,https://langsakota.bps.go.id
+23,1174,Lhokseumawe,https://lhokseumawekota.bps.go.id
+24,1175,Subulussalam,https://subulussalamkota.bps.go.id
+25,1200,Sumatera Utara,https://sumut.bps.go.id
+26,1201,Nias,https://niaskab.bps.go.id
+27,1202,Mandailing Natal,https://mandailingnatalkab.bps.go.id
+28,1203,Tapanuli Selatan,https://tapanuliselatankab.bps.go.id
+29,1204,Tapanuli Tengah,https://tapanulitengahkab.bps.go.id
+30,1205,Tapanuli Utara,https://tapanuliutarakab.bps.go.id
+31,1206,Toba,https://tobakab.bps.go.id
+32,1207,Labuhan Batu,https://labuhanbatukab.bps.go.id
+33,1208,Asahan,https://asahankab.bps.go.id
+34,1209,Simalungun,https://simalungunkab.bps.go.id
+35,1210,Dairi,https://dairikab.bps.go.id
+36,1211,Karo,https://karokab.bps.go.id
+37,1212,Deli Serdang,https://deliserdangkab.bps.go.id
+38,1213,Langkat,https://langkatkab.bps.go.id
+39,1214,Nias Selatan,https://niasselatankab.bps.go.id
+40,1215,Humbang Hasundutan,https://humbanghasundutankab.bps.go.id
+41,1216,Pakpak Bharat,https://pakpakbharatkab.bps.go.id
+42,1217,Samosir,https://samosirkab.bps.go.id
+43,1218,Serdang Bedagai,https://serdangbedagaikab.bps.go.id
+44,1219,Batu Bara,https://batubarakab.bps.go.id
+45,1220,Padang Lawas Utara,https://palutakab.bps.go.id
+46,1221,Padang Lawas,https://padanglawaskab.bps.go.id
+47,1222,Labuhan Batu Selatan,https://labuhanbatuselatankab.bps.go.id
+48,1223,Labuhan Batu Utara,https://labuhanbatuutarakab.bps.go.id
+49,1224,Nias Utara,https://niasutarakab.bps.go.id
+50,1225,Nias Barat,https://niasbaratkab.bps.go.id
+51,1271,Sibolga,https://sibolgakota.bps.go.id
+52,1272,Tanjung Balai,https://tanjungbalaikota.bps.go.id
+53,1273,Pematang Siantar,https://siantarkota.bps.go.id
+54,1274,Tebing Tinggi,https://tebingtinggikota.bps.go.id
+55,1275,Medan,https://medankota.bps.go.id
+56,1276,Binjai,https://binjaikota.bps.go.id
+57,1277,Padangsidimpuan,https://padangsidimpuankota.bps.go.id
+58,1278,Gunungsitoli,https://gunungsitolikota.bps.go.id
+59,1300,Sumatera Barat,https://sumbar.bps.go.id
+60,1301,Kepulauan Mentawai,https://mentawaikab.bps.go.id
+61,1302,Pesisir Selatan,https://pesselkab.bps.go.id
+62,1303,Solok,https://solokkab.bps.go.id
+63,1304,Sijunjung,https://sijunjungkab.bps.go.id
+64,1305,Tanah Datar,https://tanahdatarkab.bps.go.id
+65,1306,Padang Pariaman,https://padangpariamankab.bps.go.id
+66,1307,Agam,https://agamkab.bps.go.id
+67,1308,Lima Puluh Kota,https://limapuluhkotakab.bps.go.id
+68,1309,Pasaman,https://pasamankab.bps.go.id
+69,1310,Solok Selatan,https://solokselatankab.bps.go.id
+70,1311,Dharmasraya,https://dharmasrayakab.bps.go.id
+71,1312,Pasaman Barat,https://pasamanbaratkab.bps.go.id
+72,1371,Padang,https://padangkota.bps.go.id
+73,1372,Solok,https://solokkota.bps.go.id
+74,1373,Sawah Lunto,https://sawahluntokota.bps.go.id
+75,1374,Padang Panjang,https://padangpanjangkota.bps.go.id
+76,1375,Bukittinggi,https://bukittinggikota.bps.go.id
+77,1376,Payakumbuh,https://payakumbuhkota.bps.go.id
+78,1377,Pariaman,https://pariamankota.bps.go.id
+79,1400,Riau,https://riau.bps.go.id
+80,1401,Kuantan Singingi,https://kuansingkab.bps.go.id
+81,1402,Indragiri Hulu,https://inhukab.bps.go.id
+82,1403,Indragiri Hilir,https://inhilkab.bps.go.id
+83,1404,Pelalawan,https://pelalawankab.bps.go.id
+84,1405,S I A K,https://siakkab.bps.go.id
+85,1406,Kampar,https://kamparkab.bps.go.id
+86,1407,Rokan Hulu,https://rohulkab.bps.go.id
+87,1408,Bengkalis,https://bengkaliskab.bps.go.id
+88,1409,Rokan Hilir,https://rohilkab.bps.go.id
+89,1410,Kepulauan Meranti,https://merantikab.bps.go.id
+90,1471,Pekanbaru,https://pekanbarukota.bps.go.id
+91,1473,D U M A I,https://dumaikota.bps.go.id
+92,1500,Jambi,https://jambi.bps.go.id
+93,1501,Kerinci,https://kerincikab.bps.go.id
+94,1502,Merangin,https://meranginkab.bps.go.id
+95,1503,Sarolangun,https://sarolangunkab.bps.go.id
+96,1504,Batang Hari,https://batangharikab.bps.go.id
+97,1505,Muaro Jambi,https://muarojambikab.bps.go.id
+98,1506,Tanjung Jabung Timur,https://tanjabtimkab.bps.go.id
+99,1507,Tanjung Jabung Barat,https://tanjabbarkab.bps.go.id
+100,1508,Tebo,https://tebokab.bps.go.id
+101,1509,Bungo,https://bungokab.bps.go.id
+102,1571,Jambi,https://jambikota.bps.go.id
+103,1572,Sungai Penuh,https://sungaipenuhkota.bps.go.id
+104,1600,Sumatera Selatan,https://sumsel.bps.go.id
+105,1601,Ogan Komering Ulu,https://okukab.bps.go.id
+106,1602,Ogan Komering Ilir,https://okikab.bps.go.id
+107,1603,Muara Enim,https://muaraenimkab.bps.go.id
+108,1604,Lahat,https://lahatkab.bps.go.id
+109,1605,Musi Rawas,https://musirawaskab.bps.go.id
+110,1606,Musi Banyuasin,https://musibanyuasinkab.bps.go.id
+111,1607,Banyu Asin,https://banyuasinkab.bps.go.id
+112,1608,Ogan Komering Ulu Selatan,https://okuselatankab.bps.go.id
+113,1609,Ogan Komering Ulu Timur,https://okutimurkab.bps.go.id
+114,1610,Ogan Ilir,https://oganilirkab.bps.go.id
+115,1611,Empat Lawang,https://empatlawangkab.bps.go.id
+116,1612,Penukal Abab Lematang Ilir,https://palikab.bps.go.id
+117,1613,Musi Rawas Utara,https://muratarakab.bps.go.id
+118,1671,Palembang,https://palembangkota.bps.go.id
+119,1672,Prabumulih,https://prabumulihkota.bps.go.id
+120,1673,Pagar Alam,https://pagaralamkota.bps.go.id
+121,1674,Lubuklinggau,https://lubuklinggaukota.bps.go.id
+122,1700,Bengkulu,https://bengkulu.bps.go.id
+123,1701,Bengkulu Selatan,https://bengkuluselatankab.bps.go.id
+124,1702,Rejang Lebong,https://rejanglebongkab.bps.go.id
+125,1703,Bengkulu Utara,https://bengkuluutarakab.bps.go.id
+126,1704,Kaur,https://kaurkab.bps.go.id
+127,1705,Seluma,https://selumakab.bps.go.id
+128,1706,Mukomuko,https://mukomukokab.bps.go.id
+129,1707,Lebong,https://lebongkab.bps.go.id
+130,1708,Kepahiang,https://kepahiangkab.bps.go.id
+131,1709,Bengkulu Tengah,https://bengkulutengahkab.bps.go.id
+132,1771,Bengkulu,https://bengkulukota.bps.go.id
+133,1800,Lampung,https://lampung.bps.go.id
+134,1801,Lampung Barat,https://lampungbaratkab.bps.go.id
+135,1802,Tanggamus,https://tanggamuskab.bps.go.id
+136,1803,Lampung Selatan,https://lampungselatankab.bps.go.id
+137,1804,Lampung Timur,https://lampungtimurkab.bps.go.id
+138,1805,Lampung Tengah,https://lampungtengahkab.bps.go.id
+139,1806,Lampung Utara,https://lampungutarakab.bps.go.id
+140,1807,Way Kanan,https://waykanankab.bps.go.id
+141,1808,Tulangbawang,https://tulangbawangkab.bps.go.id
+142,1809,Pesawaran,https://pesawarankab.bps.go.id
+143,1810,Pringsewu,https://pringsewukab.bps.go.id
+144,1811,Mesuji,https://mesujikab.bps.go.id
+145,1812,Tulang Bawang Barat,https://tulangbawangbaratkab.bps.go.id
+146,1813,Pesisir Barat,https://pesisirbaratkab.bps.go.id
+147,1871,Bandar Lampung,https://bandarlampungkota.bps.go.id
+148,1872,Metro,https://metrokota.bps.go.id
+149,1900,Kep. Bangka Belitung,https://babel.bps.go.id
+150,1901,Bangka,https://bangkakab.bps.go.id
+151,1902,Belitung,https://belitungkab.bps.go.id
+152,1903,Bangka Barat,https://bangkabaratkab.bps.go.id
+153,1904,Bangka Tengah,https://bangkatengahkab.bps.go.id
+154,1905,Bangka Selatan,https://bangkaselatankab.bps.go.id
+155,1906,Belitung Timur,https://belitungtimurkab.bps.go.id
+156,1971,Pangkal Pinang,https://pangkalpinangkota.bps.go.id
+157,2100,Kep. Riau,https://kepri.bps.go.id
+158,2101,Karimun,https://karimunkab.bps.go.id
+159,2102,Bintan,https://bintankab.bps.go.id
+160,2103,Natuna,https://natunakab.bps.go.id
+161,2104,Lingga,https://linggakab.bps.go.id
+162,2105,Kepulauan Anambas,https://anambaskab.bps.go.id
+163,2171,B A T A M,https://batamkota.bps.go.id
+164,2172,Tanjung Pinang,https://tanjungpinangkota.bps.go.id
+165,3100,Dki Jakarta,https://jakarta.bps.go.id
+166,3101,Kepulauan Seribu,https://kepulauanseribukab.bps.go.id
+167,3171,Jakarta Selatan,https://jakselkota.bps.go.id
+168,3172,Jakarta Timur,https://jaktimkota.bps.go.id
+169,3173,Jakarta Pusat,https://jakpuskota.bps.go.id
+170,3174,Jakarta Barat,https://jakbarkota.bps.go.id
+171,3175,Jakarta Utara,https://jakutkota.bps.go.id
+172,3200,Jawa Barat,https://jabar.bps.go.id
+173,3201,Bogor,https://bogorkab.bps.go.id
+174,3202,Sukabumi,https://sukabumikab.bps.go.id
+175,3203,Cianjur,https://cianjurkab.bps.go.id
+176,3204,Bandung,https://bandungkab.bps.go.id
+177,3205,Garut,https://garutkab.bps.go.id
+178,3206,Tasikmalaya,https://tasikmalayakab.bps.go.id
+179,3207,Ciamis,https://ciamiskab.bps.go.id
+180,3208,Kuningan,https://kuningankab.bps.go.id
+181,3209,Cirebon,https://cirebonkab.bps.go.id
+182,3210,Majalengka,https://majalengkakab.bps.go.id
+183,3211,Sumedang,https://sumedangkab.bps.go.id
+184,3212,Indramayu,https://indramayukab.bps.go.id
+185,3213,Subang,https://subangkab.bps.go.id
+186,3214,Purwakarta,https://purwakartakab.bps.go.id
+187,3215,Karawang,https://karawangkab.bps.go.id
+188,3216,Bekasi,https://bekasikab.bps.go.id
+189,3217,Bandung Barat,https://bandungbaratkab.bps.go.id
+190,3218,Pangandaran,https://pangandarankab.bps.go.id
+191,3271,Bogor,https://bogorkota.bps.go.id
+192,3272,Sukabumi,https://sukabumikota.bps.go.id
+193,3273,Bandung,https://bandungkota.bps.go.id
+194,3274,Cirebon,https://cirebonkota.bps.go.id
+195,3275,Bekasi,https://bekasikota.bps.go.id
+196,3276,Depok,https://depokkota.bps.go.id
+197,3277,Cimahi,https://cimahikota.bps.go.id
+198,3278,Tasikmalaya,https://tasikmalayakota.bps.go.id
+199,3279,Banjar,https://banjarkota.bps.go.id
+200,3300,Jawa Tengah,https://jateng.bps.go.id
+201,3301,Cilacap,https://cilacapkab.bps.go.id
+202,3302,Banyumas,https://banyumaskab.bps.go.id
+203,3303,Purbalingga,https://purbalinggakab.bps.go.id
+204,3304,Banjarnegara,https://banjarnegarakab.bps.go.id
+205,3305,Kebumen,https://kebumenkab.bps.go.id
+206,3306,Purworejo,https://purworejokab.bps.go.id
+207,3307,Wonosobo,https://wonosobokab.bps.go.id
+208,3308,Magelang,https://magelangkab.bps.go.id
+209,3309,Boyolali,https://boyolalikab.bps.go.id
+210,3310,Klaten,https://klatenkab.bps.go.id
+211,3311,Sukoharjo,https://sukoharjokab.bps.go.id
+212,3312,Wonogiri,https://wonogirikab.bps.go.id
+213,3313,Karanganyar,https://karanganyarkab.bps.go.id
+214,3314,Sragen,https://sragenkab.bps.go.id
+215,3315,Grobogan,https://grobogankab.bps.go.id
+216,3316,Blora,https://blorakab.bps.go.id
+217,3317,Rembang,https://rembangkab.bps.go.id
+218,3318,Pati,https://patikab.bps.go.id
+219,3319,Kudus,https://kuduskab.bps.go.id
+220,3320,Jepara,https://jeparakab.bps.go.id
+221,3321,Demak,https://demakkab.bps.go.id
+222,3322,Semarang,https://semarangkab.bps.go.id
+223,3323,Temanggung,https://temanggungkab.bps.go.id
+224,3324,Kendal,https://kendalkab.bps.go.id
+225,3325,Batang,https://batangkab.bps.go.id
+226,3326,Pekalongan,https://pekalongankab.bps.go.id
+227,3327,Pemalang,https://pemalangkab.bps.go.id
+228,3328,Tegal,https://tegalkab.bps.go.id
+229,3329,Brebes,https://brebeskab.bps.go.id
+230,3371,Magelang,https://magelangkota.bps.go.id
+231,3372,Surakarta,https://surakartakota.bps.go.id
+232,3373,Salatiga,https://salatigakota.bps.go.id
+233,3374,Semarang,https://semarangkota.bps.go.id
+234,3375,Pekalongan,https://pekalongankota.bps.go.id
+235,3376,Tegal,https://tegalkota.bps.go.id
+236,3400,Di Yogyakarta,https://yogyakarta.bps.go.id
+237,3401,Kulon Progo,https://kulonprogokab.bps.go.id
+238,3402,Bantul,https://bantulkab.bps.go.id
+239,3403,Gunung Kidul,https://gunungkidulkab.bps.go.id
+240,3404,Sleman,https://slemankab.bps.go.id
+241,3471,Yogyakarta,https://jogjakota.bps.go.id
+242,3500,Jawa Timur,https://jatim.bps.go.id
+243,3501,Pacitan,https://pacitankab.bps.go.id
+244,3502,Ponorogo,https://ponorogokab.bps.go.id
+245,3503,Trenggalek,https://trenggalekkab.bps.go.id
+246,3504,Tulungagung,https://tulungagungkab.bps.go.id
+247,3505,Blitar,https://blitarkab.bps.go.id
+248,3506,Kediri,https://kedirikab.bps.go.id
+249,3507,Malang,https://malangkab.bps.go.id
+250,3508,Lumajang,https://lumajangkab.bps.go.id
+251,3509,Jember,https://jemberkab.bps.go.id
+252,3510,Banyuwangi,https://banyuwangikab.bps.go.id
+253,3511,Bondowoso,https://bondowosokab.bps.go.id
+254,3512,Situbondo,https://situbondokab.bps.go.id
+255,3513,Probolinggo,https://probolinggokab.bps.go.id
+256,3514,Pasuruan,https://pasuruankab.bps.go.id
+257,3515,Sidoarjo,https://sidoarjokab.bps.go.id
+258,3516,Mojokerto,https://mojokertokab.bps.go.id
+259,3517,Jombang,https://jombangkab.bps.go.id
+260,3518,Nganjuk,https://nganjukkab.bps.go.id
+261,3519,Madiun,https://madiunkab.bps.go.id
+262,3520,Magetan,https://magetankab.bps.go.id
+263,3521,Ngawi,https://ngawikab.bps.go.id
+264,3522,Bojonegoro,https://bojonegorokab.bps.go.id
+265,3523,Tuban,https://tubankab.bps.go.id
+266,3524,Lamongan,https://lamongankab.bps.go.id
+267,3525,Gresik,https://gresikkab.bps.go.id
+268,3526,Bangkalan,https://bangkalankab.bps.go.id
+269,3527,Sampang,https://sampangkab.bps.go.id
+270,3528,Pamekasan,https://pamekasankab.bps.go.id
+271,3529,Sumenep,https://sumenepkab.bps.go.id
+272,3571,Kediri,https://kedirikota.bps.go.id
+273,3572,Blitar,https://blitarkota.bps.go.id
+274,3573,Malang,https://malangkota.bps.go.id
+275,3574,Probolinggo,https://probolinggokota.bps.go.id
+276,3575,Pasuruan,https://pasuruankota.bps.go.id
+277,3576,Mojokerto,https://mojokertokota.bps.go.id
+278,3577,Madiun,https://madiunkota.bps.go.id
+279,3578,Surabaya,https://surabayakota.bps.go.id
+280,3579,Batu,https://batukota.bps.go.id
+281,3600,Banten,https://banten.bps.go.id
+282,3601,Pandeglang,https://pandeglangkab.bps.go.id
+283,3602,Lebak,https://lebakkab.bps.go.id
+284,3603,Tangerang,https://tangerangkab.bps.go.id
+285,3604,Serang,https://serangkab.bps.go.id
+286,3671,Tangerang,https://tangerangkota.bps.go.id
+287,3672,Cilegon,https://cilegonkota.bps.go.id
+288,3673,Serang,https://serangkota.bps.go.id
+289,3674,Tangerang Selatan,https://tangselkota.bps.go.id
+290,5100,Bali,https://bali.bps.go.id
+291,5101,Jembrana,https://jembranakab.bps.go.id
+292,5102,Tabanan,https://tabanankab.bps.go.id
+293,5103,Badung,https://badungkab.bps.go.id
+294,5104,Gianyar,https://gianyarkab.bps.go.id
+295,5105,Klungkung,https://klungkungkab.bps.go.id
+296,5106,Bangli,https://banglikab.bps.go.id
+297,5107,Karang Asem,https://karangasemkab.bps.go.id
+298,5108,Buleleng,https://bulelengkab.bps.go.id
+299,5171,Denpasar,https://denpasarkota.bps.go.id
+300,5200,Nusa Tenggara Barat,https://ntb.bps.go.id
+301,5201,Lombok Barat,https://lombokbaratkab.bps.go.id
+302,5202,Lombok Tengah,https://lomboktengahkab.bps.go.id
+303,5203,Lombok Timur,https://lomboktimurkab.bps.go.id
+304,5204,Sumbawa,https://sumbawakab.bps.go.id
+305,5205,Dompu,https://dompukab.bps.go.id
+306,5206,Bima,https://bimakab.bps.go.id
+307,5207,Sumbawa Barat,https://sumbawabaratkab.bps.go.id
+308,5208,Lombok Utara,https://lombokutarakab.bps.go.id
+309,5271,Mataram,https://mataramkota.bps.go.id
+310,5272,Bima,https://bimakota.bps.go.id
+311,5300,Nusa Tenggara Timur,https://ntt.bps.go.id
+312,5301,Sumba Barat,https://sumbabaratkab.bps.go.id
+313,5302,Sumba Timur,https://sumbatimurkab.bps.go.id
+314,5303,Kupang,https://kupangkab.bps.go.id
+315,5304,Timor Tengah Selatan,https://timortengahselatankab.bps.go.id
+316,5305,Timor Tengah Utara,https://timortengahutarakab.bps.go.id
+317,5306,Belu,https://belukab.bps.go.id
+318,5307,Alor,https://alorkab.bps.go.id
+319,5308,Lembata,https://lembatakab.bps.go.id
+320,5309,Flores Timur,https://florestimurkab.bps.go.id
+321,5310,Sikka,https://sikkakab.bps.go.id
+322,5311,Ende,https://endekab.bps.go.id
+323,5312,Ngada,https://ngadakab.bps.go.id
+324,5313,Manggarai,https://manggaraikab.bps.go.id
+325,5314,Rote Ndao,https://rotendaokab.bps.go.id
+326,5315,Manggarai Barat,https://manggaraibaratkab.bps.go.id
+327,5316,Sumba Tengah,https://sumbatengahkab.bps.go.id
+328,5317,Sumba Barat Daya,https://sumbabaratdayakab.bps.go.id
+329,5318,Nagekeo,https://nagekeokab.bps.go.id
+330,5319,Manggarai Timur,https://manggaraitimurkab.bps.go.id
+331,5320,Sabu Raijua,https://saburaijuakab.bps.go.id
+332,5321,Malaka,https://malakakab.bps.go.id
+333,5371,Kupang,https://kupangkota.bps.go.id
+334,6100,Kalimantan Barat,https://kalbar.bps.go.id
+335,6101,Sambas,https://sambaskab.bps.go.id
+336,6102,Bengkayang,https://bengkayangkab.bps.go.id
+337,6103,Landak,https://landakkab.bps.go.id
+338,6104,Mempawah,https://mempawahkab.bps.go.id
+339,6105,Sanggau,https://sanggaukab.bps.go.id
+340,6106,Ketapang,https://ketapangkab.bps.go.id
+341,6107,Sintang,https://sintangkab.bps.go.id
+342,6108,Kapuas Hulu,https://kapuashulukab.bps.go.id
+343,6109,Sekadau,https://sekadaukab.bps.go.id
+344,6110,Melawi,https://melawikab.bps.go.id
+345,6111,Kayong Utara,https://kayongutarakab.bps.go.id
+346,6112,Kubu Raya,https://kuburayakab.bps.go.id
+347,6171,Pontianak,https://pontianakkota.bps.go.id
+348,6172,Singkawang,https://singkawangkota.bps.go.id
+349,6200,Kalimantan Tengah,https://kalteng.bps.go.id
+350,6201,Kotawaringin Barat,https://kobarkab.bps.go.id
+351,6202,Kotawaringin Timur,https://kotimkab.bps.go.id
+352,6203,Kapuas,https://kapuaskab.bps.go.id
+353,6204,Barito Selatan,https://barselkab.bps.go.id
+354,6205,Barito Utara,https://barutkab.bps.go.id
+355,6206,Sukamara,https://sukamarakab.bps.go.id
+356,6207,Lamandau,https://lamandaukab.bps.go.id
+357,6208,Seruyan,https://seruyankab.bps.go.id
+358,6209,Katingan,https://katingankab.bps.go.id
+359,6210,Pulang Pisau,https://pulpiskab.bps.go.id
+360,6211,Gunung Mas,https://gumaskab.bps.go.id
+361,6212,Barito Timur,https://bartimkab.bps.go.id
+362,6213,Murung Raya,https://murakab.bps.go.id
+363,6271,Palangka Raya,https://palangkakota.bps.go.id
+364,6300,Kalimantan Selatan,https://kalsel.bps.go.id
+365,6301,Tanah Laut,https://tanahlautkab.bps.go.id
+366,6302,Kota Baru,https://kotabarukab.bps.go.id
+367,6303,Banjar,https://banjarkab.bps.go.id
+368,6304,Barito Kuala,https://baritokualakab.bps.go.id
+369,6305,Tapin,https://tapinkab.bps.go.id
+370,6306,Hulu Sungai Selatan,https://hulusungaiselatankab.bps.go.id
+371,6307,Hulu Sungai Tengah,https://hulusungaitengahkab.bps.go.id
+372,6308,Hulu Sungai Utara,https://hulusungaiutarakab.bps.go.id
+373,6309,Tabalong,https://tabalongkab.bps.go.id
+374,6310,Tanah Bumbu,https://tanahbumbukab.bps.go.id
+375,6311,Balangan,https://balangankab.bps.go.id
+376,6371,Banjarmasin,https://banjarmasinkota.bps.go.id
+377,6372,Banjar Baru,https://banjarbarukota.bps.go.id
+378,6400,Kalimantan Timur,https://kaltim.bps.go.id
+379,6401,Paser,https://paserkab.bps.go.id
+380,6402,Kutai Barat,https://kubarkab.bps.go.id
+381,6403,Kutai Kartanegara,https://kukarkab.bps.go.id
+382,6404,Kutai Timur,https://kutimkab.bps.go.id
+383,6405,Berau,https://beraukab.bps.go.id
+384,6409,Penajam Paser Utara,https://ppukab.bps.go.id
+385,6411,Mahakam Hulu,https://mahulukab.bps.go.id
+386,6471,Balikpapan,https://balikpapankota.bps.go.id
+387,6472,Samarinda,https://samarindakota.bps.go.id
+388,6474,Bontang,https://bontangkota.bps.go.id
+389,6500,Kalimantan Utara,https://kaltara.bps.go.id
+390,6501,Malinau,https://malinaukab.bps.go.id
+391,6502,Bulungan,https://bulungankab.bps.go.id
+392,6503,Tana Tidung,https://tanatidungkab.bps.go.id
+393,6504,Nunukan,https://nunukankab.bps.go.id
+394,6571,Tarakan,https://tarakankota.bps.go.id
+395,7100,Sulawesi Utara,https://sulut.bps.go.id
+396,7101,Bolaang Mongondow,https://bolmongkab.bps.go.id
+397,7102,Minahasa,https://minahasakab.bps.go.id
+398,7103,Kepulauan Sangihe,https://sangihekab.bps.go.id
+399,7104,Kepulauan Talaud,https://talaudkab.bps.go.id
+400,7105,Minahasa Selatan,https://minselkab.bps.go.id
+401,7106,Minahasa Utara,https://minutkab.bps.go.id
+402,7107,Bolaang Mongondow Utara,https://bolmutkab.bps.go.id
+403,7108,Siau Tagulandang Biaro,https://sitarokab.bps.go.id
+404,7109,Minahasa Tenggara,https://mitrakab.bps.go.id
+405,7110,Bolaang Mongondow Selatan,https://bolselkab.bps.go.id
+406,7111,Bolaang Mongondow Timur,https://boltimkab.bps.go.id
+407,7171,Manado,https://manadokota.bps.go.id
+408,7172,Bitung,https://bitungkota.bps.go.id
+409,7173,Tomohon,https://tomohonkota.bps.go.id
+410,7174,Kotamobagu,https://kotamobagukota.bps.go.id
+411,7200,Sulawesi Tengah,https://sulteng.bps.go.id
+412,7201,Banggai Kepulauan,https://bangkepkab.bps.go.id
+413,7202,Banggai,https://banggaikab.bps.go.id
+414,7203,Morowali,https://morowalikab.bps.go.id
+415,7204,Poso,https://posokab.bps.go.id
+416,7205,Donggala,https://donggalakab.bps.go.id
+417,7206,Toli-Toli,https://tolitolikab.bps.go.id
+418,7207,Buol,https://buolkab.bps.go.id
+419,7208,Parigi Moutong,https://parigimoutongkab.bps.go.id
+420,7209,Tojo Una-Una,https://tojounakab.bps.go.id
+421,7210,Sigi,https://sigikab.bps.go.id
+422,7211,Banggai Laut,https://banggailautkab.bps.go.id
+423,7212,Morowali Utara,https://morowaliutarakab.bps.go.id
+424,7271,Palu,https://palukota.bps.go.id
+425,7300,Sulawesi Selatan,https://sulsel.bps.go.id
+426,7301,Kepulauan Selayar,https://selayarkab.bps.go.id
+427,7302,Bulukumba,https://bulukumbakab.bps.go.id
+428,7303,Bantaeng,https://bantaengkab.bps.go.id
+429,7304,Jeneponto,https://jenepontokab.bps.go.id
+430,7305,Takalar,https://takalarkab.bps.go.id
+431,7306,Gowa,https://gowakab.bps.go.id
+432,7307,Sinjai,https://sinjaikab.bps.go.id
+433,7308,Maros,https://maroskab.bps.go.id
+434,7309,Pangkajene Dan Kepulauan,https://pangkepkab.bps.go.id
+435,7310,Barru,https://barrukab.bps.go.id
+436,7311,Bone,https://bonekab.bps.go.id
+437,7312,Soppeng,https://soppengkab.bps.go.id
+438,7313,Wajo,https://wajokab.bps.go.id
+439,7314,Sidenreng Rappang,https://sidrapkab.bps.go.id
+440,7315,Pinrang,https://pinrangkab.bps.go.id
+441,7316,Enrekang,https://enrekangkab.bps.go.id
+442,7317,Luwu,https://luwukab.bps.go.id
+443,7318,Tana Toraja,https://tatorkab.bps.go.id
+444,7322,Luwu Utara,https://luwuutarakab.bps.go.id
+445,7325,Luwu Timur,https://luwutimurkab.bps.go.id
+446,7326,Toraja Utara,https://torutkab.bps.go.id
+447,7371,Makassar,https://makassarkota.bps.go.id
+448,7372,Parepare,https://pareparekota.bps.go.id
+449,7373,Palopo,https://palopokota.bps.go.id
+450,7400,Sulawesi Tenggara,https://sultra.bps.go.id
+451,7401,Buton,https://butonkab.bps.go.id
+452,7402,Muna,https://munakab.bps.go.id
+453,7403,Konawe,https://konawekab.bps.go.id
+454,7404,Kolaka,https://kolakakab.bps.go.id
+455,7405,Konawe Selatan,https://konselkab.bps.go.id
+456,7406,Bombana,https://bombanakab.bps.go.id
+457,7407,Wakatobi,https://wakatobikab.bps.go.id
+458,7408,Kolaka Utara,https://kolutkab.bps.go.id
+459,7409,Buton Utara,https://buturkab.bps.go.id
+460,7410,Konawe Utara,https://konutkab.bps.go.id
+461,7411,Kolaka Timur,https://koltimkab.bps.go.id
+462,7412,Konawe Kepulauan,https://konkepkab.bps.go.id
+463,7413,Muna Barat,https://munbarkab.bps.go.id
+464,7414,Buton Tengah,https://butengkab.bps.go.id
+465,7415,Buton Selatan,https://buselkab.bps.go.id
+466,7471,Kendari,https://kendarikota.bps.go.id
+467,7472,Baubau,https://baubaukota.bps.go.id
+468,7500,Gorontalo,https://gorontalo.bps.go.id
+469,7501,Boalemo,https://boalemokab.bps.go.id
+470,7502,Gorontalo,https://gorontalokab.bps.go.id
+471,7503,Pohuwato,https://pohuwatokab.bps.go.id
+472,7504,Bone Bolango,https://bonebolangokab.bps.go.id
+473,7505,Gorontalo Utara,https://gorontaloutarakab.bps.go.id
+474,7571,Gorontalo,https://gorontalokota.bps.go.id
+475,7600,Sulawesi Barat,https://sulbar.bps.go.id
+476,7601,Majene,https://majenekab.bps.go.id
+477,7602,Polewali Mandar,https://polewalimandarkab.bps.go.id
+478,7603,Mamasa,https://mamasakab.bps.go.id
+479,7604,Mamuju,https://mamujukab.bps.go.id
+480,7605,Mamuju Utara,https://mamujuutarakab.bps.go.id
+481,7606,Mamuju Tengah,https://mamujutengahkab.bps.go.id
+482,8100,Maluku,https://maluku.bps.go.id
+483,8101,Maluku Tenggara Barat,https://mtbkab.bps.go.id
+484,8102,Maluku Tenggara,https://malukutenggarakab.bps.go.id
+485,8103,Maluku Tengah,https://malukutengahkab.bps.go.id
+486,8104,Buru,https://burukab.bps.go.id
+487,8105,Kepulauan Aru,https://keparukab.bps.go.id
+488,8106,Seram Bagian Barat,https://sbbkab.bps.go.id
+489,8107,Seram Bagian Timur,https://sbtkab.bps.go.id
+490,8108,Maluku Barat Daya,https://malukubaratdayakab.bps.go.id
+491,8109,Buru Selatan,https://burselkab.bps.go.id
+492,8171,Ambon,https://ambonkota.bps.go.id
+493,8172,Tual,https://tualkota.bps.go.id
+494,8200,Maluku Utara,https://malut.bps.go.id
+495,8201,Halmahera Barat,https://halbarkab.bps.go.id
+496,8202,Halmahera Tengah,https://haltengkab.bps.go.id
+497,8203,Kepulauan Sula,https://kepsulkab.bps.go.id
+498,8204,Halmahera Selatan,https://halmaheraselatankab.bps.go.id
+499,8205,Halmahera Utara,https://halutkab.bps.go.id
+500,8206,Halmahera Timur,https://haltimkab.bps.go.id
+501,8207,Pulau Morotai,https://morotaikab.bps.go.id
+502,8208,Pulau Taliabu,https://taliabukab.bps.go.id
+503,8271,Ternate,https://ternatekota.bps.go.id
+504,8272,Tidore Kepulauan,https://tikepkota.bps.go.id
+505,9100,Papua Barat,https://papuabarat.bps.go.id
+506,9101,Fakfak,https://fakfakkab.bps.go.id
+507,9102,Kaimana,https://kaimanakab.bps.go.id
+508,9103,Teluk Wondama,https://telukwondamakab.bps.go.id
+509,9104,Teluk Bintuni,https://telukbintunikab.bps.go.id
+510,9105,Manokwari,https://manokwarikab.bps.go.id
+511,9106,Sorong Selatan,https://sorongselatankab.bps.go.id
+512,9107,Sorong,https://sorongkab.bps.go.id
+513,9108,Raja Ampat,https://rajaampatkab.bps.go.id
+514,9109,Tambrauw,https://tambrauwkab.bps.go.id
+515,9110,Maybrat,https://maybratkab.bps.go.id
+516,9111,Manokwari Selatan,https://manokwariselatankab.bps.go.id
+517,9112,Pegunungan Arfak,https://pegununganarfakkab.bps.go.id
+518,9171,Sorong,https://sorongkota.bps.go.id
+519,9400,Papua,https://papua.bps.go.id
+520,9401,Merauke,https://meraukekab.bps.go.id
+521,9402,Jayawijaya,https://jayawijayakab.bps.go.id
+522,9403,Jayapura,https://jayapurakab.bps.go.id
+523,9404,Nabire,https://nabirekab.bps.go.id
+524,9408,Kepulauan Yapen,https://kepulauanyapenkab.bps.go.id
+525,9409,Biak Numfor,https://biaknumforkab.bps.go.id
+526,9410,Paniai,https://paniaikab.bps.go.id
+527,9411,Puncak Jaya,https://puncakjayakab.bps.go.id
+528,9412,Mimika,https://mimikakab.bps.go.id
+529,9413,Boven Digoel,https://bovendigoelkab.bps.go.id
+530,9414,Mappi,https://mappikab.bps.go.id
+531,9415,Asmat,https://asmatkab.bps.go.id
+532,9416,Yahukimo,https://yahukimokab.bps.go.id
+533,9417,Pegunungan Bintang,https://pegununganbintangkab.bps.go.id
+534,9418,Tolikara,https://tolikarakab.bps.go.id
+535,9419,Sarmi,https://sarmikab.bps.go.id
+536,9420,Keerom,https://keeromkab.bps.go.id
+537,9426,Waropen,https://waropenkab.bps.go.id
+538,9427,Supiori,https://supiorikab.bps.go.id
+539,9428,Mamberamo Raya,https://mamberamorayakab.bps.go.id
+540,9429,Nduga,https://ndugakab.bps.go.id
+541,9430,Lanny Jaya,https://lannyjayakab.bps.go.id
+542,9431,Mamberamo Tengah,https://mamberamotengahkab.bps.go.id
+543,9432,Yalimo,https://yalimokab.bps.go.id
+544,9433,Puncak,https://puncakkab.bps.go.id
+545,9434,Dogiyai,https://dogiyaikab.bps.go.id
+546,9435,Intan Jaya,https://intanjayakab.bps.go.id
+547,9436,Deiyai,https://deiyaikab.bps.go.id
+548,9471,Jayapura,https://jayapurakota.bps.go.id
