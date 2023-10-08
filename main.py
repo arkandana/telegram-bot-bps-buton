@@ -12,6 +12,13 @@ BOT_USERNAME: Final = '@bps7401_bot'
 user_state = {}
 user_info = {}
 temp_user_info = {}
+data = {
+            "name": [],
+            "instansi": [],
+            "jabatan": [],
+            "no_telpon": [],
+            "tanggal": []
+            }
 
 class UserInfo:
     def __init__(self):
@@ -21,20 +28,15 @@ class UserInfo:
         self.name = ''
         self.jabatan = ''
         self.instansi = ''
+        self.no_telpon = ''
         self.tanggal = dt_string
 
 def buku_tamu():
-    data = {
-            "name": [],
-            "instansi": [],
-            "jabatan": [],
-            "tanggal": []
-            }
-
     for key in user_info:
         data['name'].append(user_info[key].name)
         data['instansi'].append(user_info[key].instansi)
         data['jabatan'].append(user_info[key].jabatan)
+        data['no_telpon'].append(user_info[key].no_telpon)
         data['tanggal'].append(user_info[key].tanggal)
 
     now = datetime.now()
@@ -64,7 +66,7 @@ async def command_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if chat_id not in user_state:
         user_state[chat_id] = 0
 
-    if user_state[chat_id] != 5:
+    if user_state[chat_id] != 6:
         await send_restriction(context.bot, chat_id)
     else:
         message = f'Nama Anda adalah {temp_user_info[chat_id].name}'
@@ -87,6 +89,15 @@ async def send_welcome_get_jabatan(bot, chat_id):
     """
 
     user_state[chat_id] = 3
+    await bot.send_message(chat_id, message)
+
+async def send_welcome_get_no_telpon(bot, chat_id):
+    # state: 3
+    message = f"""
+    Kemudian. silahkan masukkan No. Telepon anda 
+    """
+
+    user_state[chat_id] = 4
     await bot.send_message(chat_id, message)
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -112,6 +123,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await send_welcome_get_jabatan(context.bot, chat_id)
     elif state == 3:
         temp_user_info[chat_id].jabatan = message.title()
+        await send_welcome_get_no_telpon(context.bot, chat_id)
+    elif state == 4:
+        temp_user_info[chat_id].no_telpon = message.title()
         await send_welcome_confirmation(context.bot, chat_id)
 
 async def send_welcome_confirmation(bot, chat_id):
@@ -120,6 +134,7 @@ async def send_welcome_confirmation(bot, chat_id):
     Nama: {temp_user_info[chat_id].name}
     Instansi: {temp_user_info[chat_id].instansi}
     Jabatan: {temp_user_info[chat_id].jabatan}
+    No. Telepon: {temp_user_info[chat_id].no_telpon}
     Apakah data tersebut sudah benar?
     """.replace('\n    ', '\n')
     buttons = [
@@ -147,7 +162,7 @@ async def callback_welcome_confirmation(update: Update, context: ContextTypes.DE
         await context.bot.send_message(chat_id, 'Terimakasih telah menggunakan layanan kami :)')
         user_info[chat_id] = temp_user_info[chat_id]
         del temp_user_info[chat_id]
-        user_state[chat_id] = 4
+        user_state[chat_id] = 5
         buku_tamu()
         await send_menu(context.bot, chat_id)
     elif callback_data == 'confirm_n':
@@ -158,7 +173,7 @@ async def callback_welcome_confirmation(update: Update, context: ContextTypes.DE
         await send_welcome_get_name(context.bot, chat_id)
 
 async def send_restriction(bot, chat_id):
-    # state not 5
+    # state not 6
     message = """
     Maaf, Anda harus memulai bot dengan mengetik '/start' terlebih dahulu.
     """
@@ -166,7 +181,7 @@ async def send_restriction(bot, chat_id):
     await bot.send_message(chat_id, message)
 
 async def send_menu(bot, chat_id):
-    # state: 4
+    # state: 5
     message = f"""
     Halo, {user_info[chat_id].name}!
     Selamat Datang di layanan PST BPS Kabupaten Buton.
@@ -176,221 +191,257 @@ async def send_menu(bot, chat_id):
         3. Berita Resmi Statistik 
         4. Infografis 
         5. Hubungi Operator 
-    Silahkan masukkan perintah menu, atau klik menu di atas.
-    Balas dengan cara (/nomor keyword)
+    Silahkan masukkan perintah menu dengan cara balas (/nomor keyword)
     Contoh: /2 pdrb'
+    
+    Jika ingin berhenti menggunakan bot, silahkan klik /stop
     """.replace('\n    ', '\n')
 
-    user_state[chat_id] = 5
+    user_state[chat_id] = 6
     await bot.send_message(chat_id, message)
 
 async def command_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await send_menu(context.bot, update.message.chat_id)
+    chat_id = update.message.chat_id
+    chat_id = str(chat_id)
+    bot = context.bot
 
+    if chat_id not in user_state:
+        user_state[chat_id] = 0
 
+    if user_state[chat_id] < 6:
+        await send_restriction(bot, chat_id)
+    else:
+        await send_menu(bot, chat_id)
 
-# async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-#     await update.message.reply_text('Selamat Datang di layanan PST BPS Kabupaten Buton '
-#                                     '\nSilahkan Pilih Menu layanan: '
-#                                     '\n1. Publikasi '
-#                                     '\n2. Tabel Statis '
-#                                     '\n3. Berita Resmi Statistik '
-#                                     '\n4. Infografis '
-#                                     '\n5. Hubungi Operator '
-#                                     '\nBalas dengan cara (/jenis layanan_keyword) '
-#                                     '\nContoh: /tabelstatis pdrb')
+async def command_stop(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    message = f"""
+    Terima Kasih Telah Menggunakan layanan Bot kami! 😊.
+    Silahkan isi survei kepuasan layanan bot PST BPS Kabupaten Buton pada link di bawah ini:
+    s.bps.go.id/asdasda
+    Jika ingin menggunakan bot kembali klik /start
+    """.replace('\n    ', '\n')
+    user_state[update.message.chat_id] = 0
+    await context.bot.send_message(update.message.chat_id, message)
 
 
 async def handle_response_publikasi(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text
-    kata = text.split()[1:]
+    kata = ' '.join(text.split()[1:])
 
-    api_key = '229df79fff1047d36f7f6ae83beac10b'
-    url = 'https://webapi.bps.go.id/v1/api/list/'
-    keyword: str = ''
-    if len(kata) >= 0:
-        keyword = ' '.join(kata)
+    if update.message.chat_id not in user_state:
+            user_state[update.message.chat_id] = 0
 
-    params = {'domain': 7401, 'model': 'publication', 'keyword': kata, 'lang': 'ind', 'key': api_key}
-    r = requests.get(url=url, params=params)
-    data = r.json()
-    try:
-        hal = data['data'][0]
-        hal = hal['pages']
+    if user_state[ update.message.chat_id] < 6:
+        await send_restriction(context.bot,  update.message.chat_id)
+    else:
+        api_key = '229df79fff1047d36f7f6ae83beac10b'
+        url = 'https://webapi.bps.go.id/v1/api/list/'
+        keyword: str = ''
+        if len(kata) >= 0:
+            keyword = ' '.join(kata)
 
-        df2 = pd.DataFrame()
-        for i in range(1, hal + 1):
-            params = {'domain': 7401, 'model': 'publication', 'page': i, 'keyword': kata, 'lang': 'ind', 'key': api_key}
-            r = requests.get(url=url, params=params)
-            data = r.json()
-            data2 = data['data'][1]
+        params = {'domain': 7401, 'model': 'publication', 'keyword': kata, 'lang': 'ind', 'key': api_key}
+        r = requests.get(url=url, params=params)
+        data = r.json()
+        try:
+            hal = data['data'][0]
+            hal = hal['pages']
 
-            df = pd.DataFrame.from_dict(data2)
-            df2 = pd.concat([df, df2], ignore_index=True)
+            df2 = pd.DataFrame()
+            for i in range(1, hal + 1):
+                params = {'domain': 7401, 'model': 'publication', 'page': i, 'keyword': kata, 'lang': 'ind', 'key': api_key}
+                r = requests.get(url=url, params=params)
+                data = r.json()
+                data2 = data['data'][1]
 
-        # for i in range (len(df2.pdf)):
-        #   await context.bot.send_document(update.message.chat_id, df2.pdf[i])
-        keyboard = []
-        pdf_len = len(df2.pdf)
+                df = pd.DataFrame.from_dict(data2)
+                df2 = pd.concat([df, df2], ignore_index=True)
 
-        for i in range(pdf_len):
-            keyboard.append(
-                [InlineKeyboardButton(df2.title[i], callback_data=str(update.message.chat_id), url=df2.pdf[i])])
+            # for i in range (len(df2.pdf)):
+            #   await context.bot.send_document(update.message.chat_id, df2.pdf[i])
+            keyboard = []
+            pdf_len = len(df2.pdf)
 
-        reply_markup = InlineKeyboardMarkup(keyboard)
-        await update.message.reply_text('Please choose:', reply_markup=reply_markup)
-        await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
-        print("BERHASILK HORE")
-    except IndexError:
-        await update.message.reply_text('Tidak ada Publikasi')
+            for i in range(pdf_len):
+                keyboard.append(
+                    [InlineKeyboardButton(df2.title[i], callback_data=str(update.message.chat_id), url=df2.pdf[i])])
+
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            await update.message.reply_text('Please choose:', reply_markup=reply_markup)
+            await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
+            print("BERHASILK HORE")
+        except IndexError:
+            await update.message.reply_text('Tidak ada Publikasi')
+            await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
 
 
 async def handle_response_tabel_statis(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text
-    kata = text.split()[1:]
-    api_key = '229df79fff1047d36f7f6ae83beac10b'
-    url = 'https://webapi.bps.go.id/v1/api/list/'
+    kata = ' '.join(text.split()[1:])
 
-    # params = {'domain':7401,'model': 'statictable','keyword':keyword,'lang':'ind','key': api_key}
-    # r = requests.get(url=url, params = params)
-    # data = r.json()
-    # data2 = data['data'][1]
-    # dfx = pd.DataFrame.from_dict(data2)
-    # dfx.to_csv('file_name.csv')
-    #
-    #
-    # chat_id = update.message.chat_id
-    # document = open('file_name.csv', 'rb')
-    # response: str = handle_response('Berikut List Tabel Statis dengan keyword '+ keyword)
-    # await context.bot.send_message(chat_id,response)
-    # await context.bot.send_document(chat_id, document)
-    keyword: str = ''
-    if len(kata) >= 0:
-        keyword = ' '.join(kata)
+    if update.message.chat_id not in user_state:
+            user_state[update.message.chat_id] = 0
 
-    params = {'domain': 7401, 'model': 'statictable', 'keyword': kata, 'lang': 'ind', 'key': api_key}
-    r = requests.get(url=url, params=params)
-    data = r.json()
-    try:
-        hal = data['data'][0]
-        hal = hal['pages']
+    if user_state[ update.message.chat_id] < 6:
+        await send_restriction(context.bot,  update.message.chat_id)
+    else:
+        api_key = '229df79fff1047d36f7f6ae83beac10b'
+        url = 'https://webapi.bps.go.id/v1/api/list/'
 
-        df2 = pd.DataFrame()
-        for i in range(1, hal + 1):
-            params = {'domain': 7401, 'model': 'statictable', 'page': i, 'keyword': kata, 'lang': 'ind', 'key': api_key}
-            r = requests.get(url=url, params=params)
-            data = r.json()
-            data2 = data['data'][1]
+        keyword: str = ''
+        if len(kata) >= 0:
+            keyword = ' '.join(kata)
 
-            df = pd.DataFrame.from_dict(data2)
-            df2 = pd.concat([df, df2], ignore_index=True)
+        params = {'domain': 7401, 'model': 'statictable', 'keyword': kata, 'lang': 'ind', 'key': api_key}
+        r = requests.get(url=url, params=params)
+        data = r.json()
+        try:
+            hal = data['data'][0]
+            hal = hal['pages']
 
-        keyboard = []
-        excel_len = len(df2.excel)
+            df2 = pd.DataFrame()
+            for i in range(1, hal + 1):
+                params = {'domain': 7401, 'model': 'statictable', 'page': i, 'keyword': kata, 'lang': 'ind', 'key': api_key}
+                r = requests.get(url=url, params=params)
+                data = r.json()
+                data2 = data['data'][1]
 
-        for i in range(excel_len):
-            keyboard.append(
-                [InlineKeyboardButton(df2.title[i], callback_data=str(update.message.chat_id), url=df2.excel[i])])
+                df = pd.DataFrame.from_dict(data2)
+                df2 = pd.concat([df, df2], ignore_index=True)
 
-        reply_markup = InlineKeyboardMarkup(keyboard)
-        await update.message.reply_text('Please choose:', reply_markup=reply_markup)
-        print("BERHASILK HORE")
-    except IndexError:
-        print(kata)
-        await update.message.reply_text('Tidak ada Tabel Statis dengan keyword ' + str(kata))
+            keyboard = []
+            excel_len = len(df2.excel)
+
+            for i in range(excel_len):
+                keyboard.append(
+                    [InlineKeyboardButton(df2.title[i], callback_data=str(update.message.chat_id), url=df2.excel[i])])
+
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            await update.message.reply_text('Silahkan PIlih:', reply_markup=reply_markup)
+            await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
+            print("BERHASILK HORE")
+        except IndexError:
+            await update.message.reply_text('Tidak ada Tabel Statis dengan keyword ' + str(kata))
+            await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
 
 
 async def handle_response_infografis(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text
-    kata = text.split()[1:]
+    kata = ' '.join(text.split()[1:])
 
-    api_key = '229df79fff1047d36f7f6ae83beac10b'
-    url = 'https://webapi.bps.go.id/v1/api/list/'
-    # params = {'domain': 7401, 'model': 'publication', 'keyword': '', 'lang': 'ind', 'key': api_key}
-    keyword: str = ''
-    if len(kata) >= 0:
-        keyword = ' '.join(kata)
+    if update.message.chat_id not in user_state:
+            user_state[update.message.chat_id] = 0
 
-    params = {'domain': 7401, 'model': 'infographic', 'keyword': kata, 'lang': 'ind', 'key': api_key}
-    r = requests.get(url=url, params=params)
-    data = r.json()
-    try:
-        hal = data['data'][0]
-        hal = hal['pages']
+    if user_state[ update.message.chat_id] < 6:
+        await send_restriction(context.bot,  update.message.chat_id)
+    else:
+        api_key = '229df79fff1047d36f7f6ae83beac10b'
+        url = 'https://webapi.bps.go.id/v1/api/list/'
+        # params = {'domain': 7401, 'model': 'publication', 'keyword': '', 'lang': 'ind', 'key': api_key}
+        keyword: str = ''
+        if len(kata) >= 0:
+            keyword = ' '.join(kata)
 
-        df2 = pd.DataFrame()
-        for i in range(1, hal + 1):
-            params = {'domain': 7401, 'model': 'infographic', 'page': i, 'keyword': kata, 'lang': 'ind', 'key': api_key}
-            r = requests.get(url=url, params=params)
-            data = r.json()
-            data2 = data['data'][1]
+        params = {'domain': 7401, 'model': 'infographic', 'keyword': kata, 'lang': 'ind', 'key': api_key}
+        r = requests.get(url=url, params=params)
+        data = r.json()
+        try:
+            hal = data['data'][0]
+            hal = hal['pages']
 
-            df = pd.DataFrame.from_dict(data2)
-            df2 = pd.concat([df, df2], ignore_index=True)
+            df2 = pd.DataFrame()
+            for i in range(1, hal + 1):
+                params = {'domain': 7401, 'model': 'infographic', 'page': i, 'keyword': kata, 'lang': 'ind', 'key': api_key}
+                r = requests.get(url=url, params=params)
+                data = r.json()
+                data2 = data['data'][1]
 
-        for i in range(len(df2.img)):
-            await context.bot.send_photo(update.message.chat_id, df2.img[i])
-        print("BERHASILK HORE")
-    except:
-        await update.message.reply_text('Tidak ada Infografis')
+                df = pd.DataFrame.from_dict(data2)
+                df2 = pd.concat([df, df2], ignore_index=True)
+
+            for i in range(len(df2.img)):
+                await context.bot.send_photo(update.message.chat_id, df2.img[i])
+
+            await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
+            print("BERHASILK HORE")
+        except:
+            await update.message.reply_text('Tidak ada Infografis')
+            await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
 
 
 async def handle_response_brs(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text
-    kata = text.split()[1:]
+    kata = ' '.join(text.split()[1:])
 
-    api_key = '229df79fff1047d36f7f6ae83beac10b'
-    url = 'https://webapi.bps.go.id/v1/api/list/'
-    keyword: str = ''
-    if len(kata) >= 0:
-        keyword = ' '.join(kata)
+    if update.message.chat_id not in user_state:
+            user_state[update.message.chat_id] = 0
 
-    params = {'domain': 7401, 'model': 'pressrelease', 'keyword': kata, 'lang': 'ind', 'key': api_key}
-    r = requests.get(url=url, params=params)
-    data = r.json()
-    try:
-        hal = data['data'][0]
-        hal = hal['pages']
+    if user_state[ update.message.chat_id] < 6:
+        await send_restriction(context.bot,  update.message.chat_id)
+    else:
+        api_key = '229df79fff1047d36f7f6ae83beac10b'
+        url = 'https://webapi.bps.go.id/v1/api/list/'
+        keyword: str = ''
+        if len(kata) >= 0:
+            keyword = ' '.join(kata)
 
-        df2 = pd.DataFrame()
-        for i in range(1, hal + 1):
-            params = {'domain': 7401, 'model': 'pressrelease', 'page': i, 'keyword': kata, 'lang': 'ind',
-                      'key': api_key}
-            r = requests.get(url=url, params=params)
-            data = r.json()
-            data2 = data['data'][1]
+        params = {'domain': 7401, 'model': 'pressrelease', 'keyword': kata, 'lang': 'ind', 'key': api_key}
+        r = requests.get(url=url, params=params)
+        data = r.json()
+        try:
+            hal = data['data'][0]
+            hal = hal['pages']
 
-            df = pd.DataFrame.from_dict(data2)
-            df2 = pd.concat([df, df2], ignore_index=True)
+            df2 = pd.DataFrame()
+            for i in range(1, hal + 1):
+                params = {'domain': 7401, 'model': 'pressrelease', 'page': i, 'keyword': kata, 'lang': 'ind',
+                          'key': api_key}
+                r = requests.get(url=url, params=params)
+                data = r.json()
+                data2 = data['data'][1]
 
-        # for i in range (len(df2.pdf)):
-        #   await context.bot.send_document(update.message.chat_id, df2.pdf[i])
-        keyboard = []
-        pdf_len = len(df2.pdf)
+                df = pd.DataFrame.from_dict(data2)
+                df2 = pd.concat([df, df2], ignore_index=True)
 
-        for i in range(pdf_len):
-            keyboard.append(
-                [InlineKeyboardButton(df2.title[i], callback_data=str(update.message.chat_id), url=df2.pdf[i])])
+            # for i in range (len(df2.pdf)):
+            #   await context.bot.send_document(update.message.chat_id, df2.pdf[i])
+            keyboard = []
+            pdf_len = len(df2.pdf)
 
-        reply_markup = InlineKeyboardMarkup(keyboard)
-        await update.message.reply_text('Please choose:', reply_markup=reply_markup)
-        print("BERHASILK HORE")
-    except IndexError:
-        await update.message.reply_text('Tidak ada Berita Resmi Statistik')
+            for i in range(pdf_len):
+                keyboard.append(
+                    [InlineKeyboardButton(df2.title[i], callback_data=str(update.message.chat_id), url=df2.pdf[i])])
+
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            await update.message.reply_text('Silahkan Pilih:', reply_markup=reply_markup)
+
+            await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
+            print("BERHASILK HORE")
+        except IndexError:
+            await update.message.reply_text('Tidak ada Berita Resmi Statistik')
+
+            await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
 
 
 async def handle_response_operator(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    chat_id = str(update.message.chat_id)
-    listt = ['WhatsApp', 'Facebook', 'Instagram']
-    url = ['wa.me/6289670045026','https://www.facebook.com/profile.php?id=100076987442090', 'https://www.instagram.com/bpskabbuton/']
-    keyboard = []
-    for i in range(len(listt)):
-        keyboard.append(
-            [InlineKeyboardButton(listt[i], callback_data=str(update.message.chat_id), url=url[i])])
+    if update.message.chat_id not in user_state:
+            user_state[update.message.chat_id] = 0
 
-    reply_markup = InlineKeyboardMarkup(keyboard)
-    await update.message.reply_text('Please choose:', reply_markup=reply_markup)
-    print("BERHASILK HORE")
+    if user_state[ update.message.chat_id] < 6:
+        await send_restriction(context.bot,  update.message.chat_id)
+    else:
+        listt = ['WhatsApp', 'Facebook', 'Instagram']
+        url = ['wa.me/6289670045026','https://www.facebook.com/profile.php?id=100076987442090', 'https://www.instagram.com/bpskabbuton/']
+        keyboard = []
+        for i in range(len(listt)):
+            keyboard.append(
+                [InlineKeyboardButton(listt[i], callback_data=str(update.message.chat_id), url=url[i])])
+
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        await update.message.reply_text('Silahkan Pilih', reply_markup=reply_markup)
+
+        await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
+        print("BERHASILK HORE")
 
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -409,6 +460,7 @@ if __name__ == '__main__':
 
     app.add_handler(CommandHandler('start', command_start))
     app.add_handler(CommandHandler('menu', command_menu))
+    app.add_handler(CommandHandler('stop', command_stop))
     app.add_handler(CommandHandler('1', handle_response_publikasi))
     app.add_handler(CommandHandler('2', handle_response_tabel_statis))
     app.add_handler(CommandHandler('3', handle_response_brs))
