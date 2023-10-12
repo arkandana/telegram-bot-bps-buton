@@ -5,6 +5,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 import requests
 import pandas as pd
 from datetime import datetime
+import re
 
 TOKEN: Final = '6388797473:AAEM5E65zRfy1Yueu6zGVNpq-6Xy48Mv5so'
 BOT_USERNAME: Final = '@bps7401_bot'
@@ -94,7 +95,7 @@ async def send_welcome_get_jabatan(bot, chat_id):
 async def send_welcome_get_no_telpon(bot, chat_id):
     # state: 3
     message = f"""
-    Kemudian. silahkan masukkan No. Telepon anda 
+    Silahkan masukkan No. Telepon anda 
     """
 
     user_state[chat_id] = 4
@@ -125,8 +126,17 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         temp_user_info[chat_id].jabatan = message.title()
         await send_welcome_get_no_telpon(context.bot, chat_id)
     elif state == 4:
-        temp_user_info[chat_id].no_telpon = message.title()
-        await send_welcome_confirmation(context.bot, chat_id)
+        myre = '^(08|[+]*628)[0-9]{9,14}'
+        if re.match(myre, message):
+            temp_user_info[chat_id].no_telpon = message
+            await send_welcome_confirmation(context.bot, chat_id)
+        else:
+            message = f"""
+            Nomor Telepon anda Tidak Valid 
+            """
+            await context.bot.send_message(chat_id, message)
+            await send_welcome_get_no_telpon(context.bot, chat_id)
+
 
 async def send_welcome_confirmation(bot, chat_id):
     # state: 2
@@ -202,7 +212,7 @@ async def send_menu(bot, chat_id):
 
 async def command_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat_id = update.message.chat_id
-    chat_id = str(chat_id)
+    # chat_id = str(chat_id)
     bot = context.bot
 
     if chat_id not in user_state:
@@ -229,16 +239,16 @@ async def handle_response_publikasi(update: Update, context: ContextTypes.DEFAUL
     kata = ' '.join(text.split()[1:])
 
     if update.message.chat_id not in user_state:
-            user_state[update.message.chat_id] = 0
+        user_state[update.message.chat_id] = 0
 
-    if user_state[ update.message.chat_id] < 6:
+    if user_state[update.message.chat_id] < 6:
         await send_restriction(context.bot,  update.message.chat_id)
     else:
         api_key = '229df79fff1047d36f7f6ae83beac10b'
         url = 'https://webapi.bps.go.id/v1/api/list/'
-        keyword: str = ''
-        if len(kata) >= 0:
-            keyword = ' '.join(kata)
+        # keyword: str = ''
+        # if len(kata) >= 0:
+        #     keyword = ' '.join(kata)
 
         params = {'domain': 7401, 'model': 'publication', 'keyword': kata, 'lang': 'ind', 'key': api_key}
         r = requests.get(url=url, params=params)
@@ -280,17 +290,17 @@ async def handle_response_tabel_statis(update: Update, context: ContextTypes.DEF
     kata = ' '.join(text.split()[1:])
 
     if update.message.chat_id not in user_state:
-            user_state[update.message.chat_id] = 0
+        user_state[update.message.chat_id] = 0
 
-    if user_state[ update.message.chat_id] < 6:
+    if user_state[update.message.chat_id] < 6:
         await send_restriction(context.bot,  update.message.chat_id)
     else:
         api_key = '229df79fff1047d36f7f6ae83beac10b'
         url = 'https://webapi.bps.go.id/v1/api/list/'
 
-        keyword: str = ''
-        if len(kata) >= 0:
-            keyword = ' '.join(kata)
+        # keyword: str = ''
+        # if len(kata) >= 0:
+        #     keyword = ' '.join(kata)
 
         params = {'domain': 7401, 'model': 'statictable', 'keyword': kata, 'lang': 'ind', 'key': api_key}
         r = requests.get(url=url, params=params)
@@ -330,9 +340,9 @@ async def handle_response_infografis(update: Update, context: ContextTypes.DEFAU
     kata = ' '.join(text.split()[1:])
 
     if update.message.chat_id not in user_state:
-            user_state[update.message.chat_id] = 0
+        user_state[update.message.chat_id] = 0
 
-    if user_state[ update.message.chat_id] < 6:
+    if user_state[update.message.chat_id] < 6:
         await send_restriction(context.bot,  update.message.chat_id)
     else:
         api_key = '229df79fff1047d36f7f6ae83beac10b'
@@ -364,7 +374,7 @@ async def handle_response_infografis(update: Update, context: ContextTypes.DEFAU
 
             await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
             print("BERHASILK HORE")
-        except:
+        except IndexError:
             await update.message.reply_text('Tidak ada Infografis')
             await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
 
@@ -374,9 +384,9 @@ async def handle_response_brs(update: Update, context: ContextTypes.DEFAULT_TYPE
     kata = ' '.join(text.split()[1:])
 
     if update.message.chat_id not in user_state:
-            user_state[update.message.chat_id] = 0
+        user_state[update.message.chat_id] = 0
 
-    if user_state[ update.message.chat_id] < 6:
+    if user_state[update.message.chat_id] < 6:
         await send_restriction(context.bot,  update.message.chat_id)
     else:
         api_key = '229df79fff1047d36f7f6ae83beac10b'
@@ -425,13 +435,13 @@ async def handle_response_brs(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 async def handle_response_operator(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.message.chat_id not in user_state:
-            user_state[update.message.chat_id] = 0
+        user_state[update.message.chat_id] = 0
 
-    if user_state[ update.message.chat_id] < 6:
+    if user_state[update.message.chat_id] < 6:
         await send_restriction(context.bot,  update.message.chat_id)
     else:
         listt = ['WhatsApp', 'Facebook', 'Instagram']
-        url = ['wa.me/6289670045026','https://www.facebook.com/profile.php?id=100076987442090', 'https://www.instagram.com/bpskabbuton/']
+        url = ['wa.me/6289670045026', 'https://www.facebook.com/profile.php?id=100076987442090', 'https://www.instagram.com/bpskabbuton/']
         keyboard = []
         for i in range(len(listt)):
             keyboard.append(
