@@ -16,7 +16,7 @@ temp_user_info = {}
 data = {
             "name": [],
             "instansi": [],
-            "jabatan": [],
+            # "jabatan": [],
             "no_telpon": [],
             "tanggal": []
             }
@@ -27,7 +27,7 @@ class UserInfo:
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
         self.name = ''
-        self.jabatan = ''
+        # self.jabatan = ''
         self.instansi = ''
         self.no_telpon = ''
         self.tanggal = dt_string
@@ -36,7 +36,7 @@ def buku_tamu():
     for key in user_info:
         data['name'].append(user_info[key].name)
         data['instansi'].append(user_info[key].instansi)
-        data['jabatan'].append(user_info[key].jabatan)
+        # data['jabatan'].append(user_info[key].jabatan)
         data['no_telpon'].append(user_info[key].no_telpon)
         data['tanggal'].append(user_info[key].tanggal)
 
@@ -67,7 +67,7 @@ async def command_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if chat_id not in user_state:
         user_state[chat_id] = 0
 
-    if user_state[chat_id] != 6:
+    if user_state[chat_id] != 5:
         await send_restriction(context.bot, chat_id)
     else:
         message = f'Nama Anda adalah {temp_user_info[chat_id].name}'
@@ -83,14 +83,14 @@ async def send_welcome_get_instansi(bot, chat_id):
     user_state[chat_id] = 2
     await bot.send_message(chat_id, message)
 
-async def send_welcome_get_jabatan(bot, chat_id):
-    # state: 2
-    message = f"""
-    Kemudian. silahkan masukkan jabatan anda 
-    """
-
-    user_state[chat_id] = 3
-    await bot.send_message(chat_id, message)
+# async def send_welcome_get_jabatan(bot, chat_id):
+#     # state: 2
+#     message = f"""
+#     Kemudian. silahkan masukkan jabatan anda
+#     """
+#
+#     user_state[chat_id] = 3
+#     await bot.send_message(chat_id, message)
 
 async def send_welcome_get_no_telpon(bot, chat_id):
     # state: 3
@@ -98,7 +98,8 @@ async def send_welcome_get_no_telpon(bot, chat_id):
     Silahkan masukkan No. Telepon anda 
     """
 
-    user_state[chat_id] = 4
+    user_state[chat_id] = 3
+    #user_state[chat_id] = 4
     await bot.send_message(chat_id, message)
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -121,11 +122,13 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await send_welcome_get_instansi(context.bot, chat_id)
     elif state == 2:
         temp_user_info[chat_id].instansi = message.title()
-        await send_welcome_get_jabatan(context.bot, chat_id)
-    elif state == 3:
-        temp_user_info[chat_id].jabatan = message.title()
+        #await send_welcome_get_jabatan(context.bot, chat_id)
         await send_welcome_get_no_telpon(context.bot, chat_id)
-    elif state == 4:
+    # elif state == 3:
+    #     temp_user_info[chat_id].jabatan = message.title()
+    #     await send_welcome_get_no_telpon(context.bot, chat_id)
+    elif state == 3:
+    # elif state == 4:
         myre = '^(08|[+]*628)[0-9]{9,14}'
         if re.match(myre, message):
             temp_user_info[chat_id].no_telpon = message
@@ -143,7 +146,6 @@ async def send_welcome_confirmation(bot, chat_id):
     message = f"""
     Nama: {temp_user_info[chat_id].name}
     Instansi: {temp_user_info[chat_id].instansi}
-    Jabatan: {temp_user_info[chat_id].jabatan}
     No. Telepon: {temp_user_info[chat_id].no_telpon}
     Apakah data tersebut sudah benar?
     """.replace('\n    ', '\n')
@@ -172,7 +174,8 @@ async def callback_welcome_confirmation(update: Update, context: ContextTypes.DE
         await context.bot.send_message(chat_id, 'Terimakasih telah menggunakan layanan kami :)')
         user_info[chat_id] = temp_user_info[chat_id]
         del temp_user_info[chat_id]
-        user_state[chat_id] = 5
+        user_state[chat_id] = 4
+        # user_state[chat_id] = 5
         buku_tamu()
         await send_menu(context.bot, chat_id)
     elif callback_data == 'confirm_n':
@@ -207,7 +210,8 @@ async def send_menu(bot, chat_id):
     Jika ingin berhenti menggunakan bot, silahkan klik /stop
     """.replace('\n    ', '\n')
 
-    user_state[chat_id] = 6
+    user_state[chat_id] = 5
+    #user_state[chat_id] = 6
     await bot.send_message(chat_id, message)
 
 async def command_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -218,7 +222,7 @@ async def command_menu(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if chat_id not in user_state:
         user_state[chat_id] = 0
 
-    if user_state[chat_id] < 6:
+    if user_state[chat_id] < 5:
         await send_restriction(bot, chat_id)
     else:
         await send_menu(bot, chat_id)
@@ -227,7 +231,8 @@ async def command_stop(update: Update, context: ContextTypes.DEFAULT_TYPE):
     message = f"""
     Terima Kasih Telah Menggunakan layanan Bot kami! 😊.
     Silahkan isi survei kepuasan layanan bot PST BPS Kabupaten Buton pada link di bawah ini:
-    s.bps.go.id/asdasda
+    s.bps.go.id/SurveiKepuasanBotPSTBPSBUTON
+    
     Jika ingin menggunakan bot kembali klik /start
     """.replace('\n    ', '\n')
     user_state[update.message.chat_id] = 0
@@ -241,7 +246,7 @@ async def handle_response_publikasi(update: Update, context: ContextTypes.DEFAUL
     if update.message.chat_id not in user_state:
         user_state[update.message.chat_id] = 0
 
-    if user_state[update.message.chat_id] < 6:
+    if user_state[update.message.chat_id] < 5:
         await send_restriction(context.bot,  update.message.chat_id)
     else:
         api_key = '229df79fff1047d36f7f6ae83beac10b'
@@ -281,7 +286,7 @@ async def handle_response_publikasi(update: Update, context: ContextTypes.DEFAUL
             await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
             print("BERHASILK HORE")
         except IndexError:
-            await update.message.reply_text('Tidak ada Publikasi')
+            await update.message.reply_text('Tidak ada Publikasi dengan keyword ' + str(kata))
             await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
 
 
@@ -292,7 +297,7 @@ async def handle_response_tabel_statis(update: Update, context: ContextTypes.DEF
     if update.message.chat_id not in user_state:
         user_state[update.message.chat_id] = 0
 
-    if user_state[update.message.chat_id] < 6:
+    if user_state[update.message.chat_id] < 5:
         await send_restriction(context.bot,  update.message.chat_id)
     else:
         api_key = '229df79fff1047d36f7f6ae83beac10b'
@@ -342,7 +347,7 @@ async def handle_response_infografis(update: Update, context: ContextTypes.DEFAU
     if update.message.chat_id not in user_state:
         user_state[update.message.chat_id] = 0
 
-    if user_state[update.message.chat_id] < 6:
+    if user_state[update.message.chat_id] < 5:
         await send_restriction(context.bot,  update.message.chat_id)
     else:
         api_key = '229df79fff1047d36f7f6ae83beac10b'
@@ -375,7 +380,7 @@ async def handle_response_infografis(update: Update, context: ContextTypes.DEFAU
             await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
             print("BERHASILK HORE")
         except IndexError:
-            await update.message.reply_text('Tidak ada Infografis')
+            await update.message.reply_text('Tidak ada Infografis dengan keyword ' + str(kata))
             await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
 
 
@@ -386,7 +391,7 @@ async def handle_response_brs(update: Update, context: ContextTypes.DEFAULT_TYPE
     if update.message.chat_id not in user_state:
         user_state[update.message.chat_id] = 0
 
-    if user_state[update.message.chat_id] < 6:
+    if user_state[update.message.chat_id] < 5:
         await send_restriction(context.bot,  update.message.chat_id)
     else:
         api_key = '229df79fff1047d36f7f6ae83beac10b'
@@ -428,8 +433,7 @@ async def handle_response_brs(update: Update, context: ContextTypes.DEFAULT_TYPE
             await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
             print("BERHASILK HORE")
         except IndexError:
-            await update.message.reply_text('Tidak ada Berita Resmi Statistik')
-
+            await update.message.reply_text('Tidak ada Berita Resmi Statistik dengan keyword ' + str(kata))
             await update.message.reply_text('Jika ingin kembali ke menu awal silahkan klik /menu')
 
 
@@ -437,7 +441,7 @@ async def handle_response_operator(update: Update, context: ContextTypes.DEFAULT
     if update.message.chat_id not in user_state:
         user_state[update.message.chat_id] = 0
 
-    if user_state[update.message.chat_id] < 6:
+    if user_state[update.message.chat_id] < 5:
         await send_restriction(context.bot,  update.message.chat_id)
     else:
         listt = ['WhatsApp', 'Facebook', 'Instagram']
